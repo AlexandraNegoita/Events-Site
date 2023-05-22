@@ -1,0 +1,29 @@
+
+#carousel-first-page {
+	overflow:hidden;
+	height: 100%;
+}
+.carousel-inner img {
+    display:block;
+    object-fit: cover;
+    height: 100vh;
+}
+#title-card {
+	position: absolute;
+	padding: 5%;
+	color: rgba(255,255,255,1);
+	background-color: rgba(0,0,0,0.2);
+	
+}
+#city-selector {
+	width: 100%;
+}
+
+.fade {
+	opacity: 100!important;
+    -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent);
+  }
+ 
+.nav-link--ii{
+	color:black;
+}
