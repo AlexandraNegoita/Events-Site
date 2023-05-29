@@ -5,9 +5,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  	<title>proiect</title>
+  	<title>Eventis - Find events that happen near you</title>
     <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   </head>
   <body>
@@ -21,28 +22,28 @@
 			<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
 			  <div class="carousel-inner" id="carousel-first-page">
 				    <div class="carousel-item active">
-				      	<img class="d-block w-100" src="resources/1.jpg" alt="First slide">
+				      	<img class="d-block w-100" src="resources/0/1.jpg" alt="First slide">
 				    </div>
 				    <div class="carousel-item">
-				      	<img class="d-block w-100" src="resources/2.jpg" alt="Second slide">
+				      	<img class="d-block w-100" src="resources/0/2.jpg" alt="Second slide">
 				    </div>
 				    <div class="carousel-item">
-				      	<img class="d-block w-100" src="resources/3.jpg" alt="Third slide">
+				      	<img class="d-block w-100" src="resources/0/3.jpg" alt="Third slide">
 				    </div>
 			   </div>
 			</div>
 			
 		</div>
 		<div id="title-card">
-				<h1 class="display-1">titlu</h1>
+				<h1 class="display-1">EVENTIS</h1>
 				<p class="h3">Find events that happen near you</p>
 				<form class="form-inline" action="ConnToEventTypes" method="GET" id="city-selector">
 					<div class="input-group w-100">
 						  <select class="custom-select w-60" name="selectCity" id="inputGroupSelect04">
-							    <option selected>Choose...</option>
+							    <option selected disabled>Choose...</option>
 							    <%
 									Class.forName("com.mysql.jdbc.Driver");
-									Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proiectdb","root", "toor");
+								Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proiectdb","root", "toor");
             						Statement stmt = conn.createStatement();
             						String sql = "select * from cities";
 									ResultSet rs = stmt.executeQuery(sql);
@@ -68,6 +69,5 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
   </body>
 </html>

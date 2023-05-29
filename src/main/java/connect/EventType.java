@@ -1,18 +1,19 @@
 package connect;
 
 public class EventType {
-	private int typeID;
 	private String typeName;
-	public EventType(int typeID, String typeName) {
-		this.typeID = typeID;
+	private int eventCount;
+	public int getEventCount() {
+		return eventCount;
+	}
+	public void setEventCount(int eventCount) {
+		this.eventCount = eventCount;
+	}
+	public EventType(String typeName, int eventCount) {
 		this.typeName = typeName;
+		this.eventCount = eventCount;
 	}
-	public int getTypeID() {
-		return typeID;
-	}
-	public void setTypeID(int typeID) {
-		this.typeID = typeID;
-	}
+
 	public String getTypeName() {
 		return typeName;
 	}

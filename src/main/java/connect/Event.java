@@ -10,6 +10,47 @@ public class Event {
 	private String description;
 	private int locationID;
 	private int userID;
+	private int typeID;
+	public int getTypeID() {
+		return typeID;
+	}
+	public void setTypeID() {
+		if(type.equals("Concerts")) {
+			this.typeID = 1;
+		}else if(type.equals("Exhibitions")) {
+			this.typeID = 2;
+		} else if(type.equals("Sports")) {
+			this.typeID = 3;
+		}else if(type.equals("Fairs")) {
+			this.typeID = 4;
+		}else if(type.equals("Shows")) {
+			this.typeID = 5;
+		}
+		
+	}
+	private boolean valid;
+	
+	
+	
+	
+	public Event() {
+		super();
+	}
+	public boolean isValid() {
+		return valid;
+	}
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
+	public Event(int eventID, String eventName, String eventLink, Date dateBegin, Date dateEnd, String description) {
+		super();
+		this.eventID = eventID;
+		this.eventName = eventName;
+		this.eventLink = eventLink;
+		this.dateBegin = dateBegin;
+		this.dateEnd = dateEnd;
+		this.description = description;
+	}
 	public Event(int eventID, String eventName, String type, String eventLink, Date dateBegin, Date dateEnd,
 			String description, int locationID, int userID) {
 		super();
@@ -35,10 +76,13 @@ public class Event {
 	public void setEventName(String eventName) {
 		this.eventName = eventName;
 	}
+	public String getEventSearchData() {
+		return this.eventName.replaceAll("\\s+","");
+	}
 	public String getType() {
 		return type;
 	}
-	public void setTypeID(String type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getEventLink() {
@@ -58,6 +102,16 @@ public class Event {
 	}
 	public void setDateEnd(Date dateEnd) {
 		this.dateEnd = dateEnd;
+	}
+	public String formatDate(Date date) {
+		return date.getYear() + "-" + date.getNumMonth() + "-" + Integer.toString(date.getDay());
+	}
+	public String getEventDate() {
+		if(this.dateBegin.sameDate(this.dateEnd) == true) {
+			return Integer.toString(this.dateBegin.getDay());
+		} else {
+			return Integer.toString(this.dateBegin.getDay()) + "-" + Integer.toString(this.dateEnd.getDay());
+		}
 	}
 	public String getDescription() {
 		return description;

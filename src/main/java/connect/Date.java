@@ -15,6 +15,12 @@ public class Date {
 	public void setDay(int day) {
 		this.day = day;
 	}
+	public String getNumMonth() {
+		return this.month;
+	}
+	public String formatDateForDB() {
+		return Integer.toString(this.year)+"-"+this.month+"-"+Integer.toString(this.day);
+	}
 	public String getMonth() {
 		switch(month) {
 			case "01": {
@@ -54,7 +60,7 @@ public class Date {
 				return "DEC";
 			}
 		}
-		return "NO-MONTH";
+		return month;
 	}
 	public void setMonth(String month) {
 		this.month = month;
@@ -64,6 +70,12 @@ public class Date {
 	}
 	public void setYear(int year) {
 		this.year = year;
+	}
+	public boolean sameDate(Date date) {
+		if(this.getDay() == date.getDay() && this.getMonth().equals(date.getMonth())) {
+			return true;
+		}
+		return false;
 	}
 	
 }
